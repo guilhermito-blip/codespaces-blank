@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href=".style.css">
+    <style>
+        body {background-color: black;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relapsi</title>
+</head>
+<body>
+    <div class="container">
+  <p class="texto" style="color: darkgreen;">
+//==================================================== <br>
+// SISTEMA: Relapsi<br>
+// STATUS: ALERTA ESCARLATE<br>
+//====================================================<br>
+<br>
+entity: NDR-03 {<br>
+    origem      = "Mato Grosso";<br>
+    destino     = "Rio de Janeiro";<br>
+    classificao = "Predador Nível Ômega"; <br>
+    risco       = MAXIMO;<br>
+}<br>
+<br>
+rota Transporte_441 {<br>
+    inicio    -> "Mato Grosso";<br>
+    destino   -> "Rio de Janeiro";<br>
+}<br>
+<br>
+evento FUGA_DETECTADA {<br>
+<br>
+    timestamp = "03:17:44";<br>
+    local     = "Araguapaz/SP";<br>
+    causa     = "Falha estrutural no compartimento traseiro";<br>
+<br>
+    (gaiola.status == "ROMPIDA") <br>
+    <br>
+<br>
+    sensores.detectaram(<br>
+        ataques_civis        = true,<br>
+        pegadas_grandes      = true,<br>
+        sons_agressivos      = true,<br>
+        temperatura_corporal = "fria"<br>
+    );<br>
+<br>
+    }<br>
+<br>
+    log.final = """<br>
+    A criatura desapareceu após entrar em uma região<br>
+    de mata em uma estrada próxima ao perímetro urbano.<br>
+    """<br>
+}<br>
+<br>
+return STATUS_CRITICO;<br>
+  </p>
+</div> 
+</body>
+</html>

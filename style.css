@@ -1,0 +1,29 @@
+@font-face {
+    font-family: bitmaps;
+    src: url("fontes/pix32/Pix32.ttf");
+}
+body {
+    font-size: 30px;
+    font-family: bitmaps;
+}
+.texto {
+  color: darkgreen;
+  /* Esconde o texto e mantém em uma linha */
+  overflow: hidden;
+  white-space: nowrap;
+  
+  
+  /* Aplica a animação: nome, tempo, passos, repetição */
+  animation: 
+    typing 10s steps(70, end), 
+    blink-caret 0.5s step-end infinite alternate;
+  
+  /* Garante que o texto fique visível ao final */
+  width: 100%;
+}
+
+/* Animação de digitar: largura vai de 0 a 100% */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
